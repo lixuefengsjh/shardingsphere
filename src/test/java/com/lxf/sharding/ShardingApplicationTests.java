@@ -27,7 +27,7 @@ class ShardingApplicationTests {
         Order order =new Order();
         order.setUserId(1l);
         order.setOrderAmount(BigDecimal.ONE);
-        order.setOrderId(1l);
+        order.setOrderId(0l);
         order.setOrderNo("lxf--001");
         order.setOrderStatus(1);
         order.setRemark("第一条测试数据");
