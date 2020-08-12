@@ -206,7 +206,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.lxf.sharding.entity.Order">
-    update t_order
+    update t_order_
     <set>
       <if test="orderNo != null">
         order_no = #{orderNo,jdbcType=VARCHAR},
@@ -227,7 +227,7 @@
     where order_id = #{orderId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.lxf.sharding.entity.Order">
-    update t_order
+    update t_order_
     set order_no = #{orderNo,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=BIGINT},
       order_amount = #{orderAmount,jdbcType=DECIMAL},
