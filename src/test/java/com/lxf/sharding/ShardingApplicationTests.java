@@ -35,7 +35,7 @@ class ShardingApplicationTests {
     }
     @Test
     public void testSelect(){
-        Order o=orderServiceImpl.selectByPrimaryKey(1l);
+        Order o=orderServiceImpl.selectByPrimaryKey(0l);
         System.out.println(o);
     }
     @Test

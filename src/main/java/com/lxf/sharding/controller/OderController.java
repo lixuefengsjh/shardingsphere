@@ -22,9 +22,9 @@ public class OderController {
      @PostMapping("update")
      public void update(){
           Order order =new Order();
-          order.setUserId(0l);
+          order.setUserId(0L);
           order.setOrderAmount(BigDecimal.ONE);
-          order.setOrderId(0l);
+          order.setOrderId(0L);
           order.setOrderNo("lxf--000");
           order.setOrderStatus(1);
           order.setRemark("第一条测试数据--修改--001");

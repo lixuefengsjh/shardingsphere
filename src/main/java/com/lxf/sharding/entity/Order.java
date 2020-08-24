@@ -1,8 +1,9 @@
 package com.lxf.sharding.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Order {
+public class Order implements Serializable {
     private Long orderId;
 
     private String orderNo;

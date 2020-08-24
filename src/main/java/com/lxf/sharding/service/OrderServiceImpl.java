@@ -29,13 +29,13 @@ public class OrderServiceImpl {
     }
     public Order selectByPrimaryKey(Long id){
         Order order=new Order();
-        if(null!=redisUtil.hGetAll(String.format("ORDER_PRIFIX%s",id))){
-             BeanUtils.copyProperties(order,redisUtil.hGetAll(String.format("ORDER_PRIFIX%s",id)));
+        if(redisUtil.hGetAll(String.format(ORDER_PRIFIX+"%s",id)).size()>0){
+             BeanUtil.copyProperties(redisUtil.hGetAll(String.format(ORDER_PRIFIX+"%s",id)),order);
             return order;
         }
         order= orderMapper.selectByPrimaryKey(id);
 
-        redisUtil.hPutAll(String.format("ORDER_PRIFIX%s",id),BeanUtil.beanToMap(order));
+        redisUtil.hPutAll(String.format(ORDER_PRIFIX+"%s",id),BeanUtil.beanToMap(order));
         return order;
     }
     public  Long count(){
